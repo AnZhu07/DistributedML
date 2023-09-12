@@ -46,7 +46,6 @@ class decentralised:
 
 
     def avg_n(self):
-        print('avg')
         model_set = []
         for idx in range(self.len_agents):
             model_set.append(copy.deepcopy(self.model[idx].state_dict()))  #copy all model
@@ -66,4 +65,4 @@ class decentralised:
                             avg_dict[key]+=(model_set[i][key])*(1/count)  #avg each parameter for agents connected
                
                 self.model[j].load_state_dict(avg_dict) #update to the network list
-        #print('averaging')
+
